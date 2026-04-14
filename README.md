@@ -13,7 +13,7 @@ It uses LLMs from ChatGPT, Gemini, etc, in order to generate the best answer, us
 
 [**Click Here**](https://huggingface.co/spaces/lfagundesds/leogpt) and try it out!
 
-<img src="images/chat.png" style="width:70%;" alt="Example of Chat" >
+![Example of Chat](images/chat.png)
 
 ## Setup
 
