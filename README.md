@@ -7,21 +7,13 @@ sdk_version: 6.12.0
 
 # LeoGPT
 
-ML Agent designed to answer professional questions about myself.
+An AI Agent designed to answer professional questions about me through chat.
 
-## Live Demo
+It uses LLMs from ChatGPT, Gemini, etc, in order to generate the best answer, using my resume and a summary about me as data.
 
-Try the hosted app directly:
+[**Click Here**](https://huggingface.co/spaces/lfagundesds/leogpt) and try it out!
 
-<iframe
-  src="https://lfagundesds-leogpt.hf.space"
-  frameborder="0"
-  width="100%"
-  height="720"
-></iframe>
-
-If the embed does not render in your viewer, open it here:
-[https://lfagundesds-leogpt.hf.space](https://lfagundesds-leogpt.hf.space)
+<img src="images/chat.png" style="width:70%;" alt="Example of Chat" >
 
 ## Setup
 
@@ -57,7 +49,7 @@ python -m leogpt
 
 ## Deployment
 
-The deployment is made on [Hugging Face](https://huggingface.co)
+The deployment can be made on [Hugging Face](https://huggingface.co)
 
 1. If you don't have a Hugging Face account, go to the next section before continuing;
 2. Run `hf auth login --token HF_TOKEN`, like `hf auth login --token hf_xxxxxx`, to login at the command line with your key. Afterwards, run `hf auth whoami` to check you're logged in
