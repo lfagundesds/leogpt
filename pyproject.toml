@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leogpt"
+version = "0.1.0"
+description = "ML Agent designed to answer professional questions about myself"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Leo Fagundes" }]
+dependencies = [
+    "gradio",
+    "pydantic>=2.11.10,<=2.12.5",
+    "dotenv",
+    "openai",
+    "requests",
+    "pypdf",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",    
+]
+
+[project.scripts]
+leogpt = "leogpt.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

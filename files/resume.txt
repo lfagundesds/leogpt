@@ -1,0 +1,63 @@
+﻿Leo Fagundes
+Principal Software Engineer | System Architect | Technical & Product Lead | AI Enabler | Mentor
+City: San Diego, CA | Phone number: (415) 900-6023 | email: lfagundesds@gmail.com | LinkedIn: linkedin.com/in/lfagundesds | Github: github.com/lfagundesds
+
+
+SUMMARY
+Principal Software Engineer with over 20 years of experience architecting, leading, and delivering highly scalable, cloud-native, and distributed software solutions. 
+Strong background in technical and product leadership, driving the strategic vision and roadmap for multiple projects. 
+Mentored and led high-performing, cross-functional teams to design and launch complex products and systems, consistently improving performance, scalability, and engineering best practices. 
+Expert in Java, Node.js, Microservices, Cloud Platforms, RESTful APIs, Orchestration, and SQL/NoSQL databases. 
+Successfully delivered end-to-end projects across Cloud, E-Commerce, Financial Services, and Construction sectors.
+
+SKILLS & TECHNOLOGIES
+Leadership & Management: Technical Leadership, Mentoring, Cross-Functional Team Collaboration, Technical Vision, Release Management, Scrum, Agile, Interviewing and Recruitment, Strategic Planning.
+Architectural Patterns: Microservices, SOA, Web Services, REST, BPM, UML, GraphQL, Event-Driven Architecture, Message Queues, Design Patterns, Data Engineering, Data Analytics, Data Warehousing.
+Core Languages & Frameworks: Java, Python, Node.js, React, Spring Boot, JPA, Hibernate, JSF, Maven, Scikit-Learn, TensorFlow, JavaScript, HTML, CSS, Oracle BPM, Camunda.
+AI & Machine Learning: Neural Networks, Reinforcement Learning, Regression, Agentic AI systems, LLM-based coding assistants, GitHub Copilot, Gemini, ChatGPT, Claude.
+Databases: Oracle Database, PostgreSQL, MySQL, DynamoDB, Snowflake, Redis.
+Cloud: Amazon AWS, Oracle Cloud Infrastructure (OCI), IaaS, PaaS, SaaS, FaaS.
+DevOps: CI/CD, IaC, Terraform, Jenkins, Docker, Kubernetes, Dynatrace, New Relic, Splunk, Grafana.
+
+
+PATENTS & CERTIFICATIONS
+* Certification: Machine Learning Specialization, Stanford University.
+* Certified Java Programmer for the Java Platform, Sun/Oracle.
+* Certified Scrum Master, Scrum Alliance.
+* Patent 1: Matching Service Entities With Candidate Resources. (https://patents.google.com/patent/US20110179041)
+* Patent 2: Behavior Based Bundling. (https://patents.google.com/patent/US20130290107)
+
+
+PROFESSIONAL EXPERIENCE
+ORACLE - Principal Software Engineer        Apr 2024 – Sept 2025
+* Architected and implemented a Multicloud platform that integrated Oracle Databases within AWS Data Centers, delivering RESTful APIs and automated workflows, alongside critical solutions for security (IAM, mTLS, certificates), performance (caching), and reliability (test automation, observability, alarms) across the entire service lifecycle.
+* Drove strategic performance initiatives by leading cross-functional collaboration with internal service owners. This effort directly optimized core services inside the organization, resulting in measurable gains in the overall performance and responsiveness of our critical APIs.
+* Defined and implemented new release management guidelines that significantly enhanced release quality while simultaneously reducing the manual effort and time investment required from participating teams.
+
+
+PROCORE - Staff Software Engineer        Apr 2023 – Apr 2024
+* Led cross-functional teams on a critical FinTech integration initiative that automated manual financial workflows across multiple enterprise systems, reducing the need for monthly manual effort, while eliminating human processing errors.
+* Drove the full technical lifecycle, from initial system architecture and business analysis to final delivery, ensuring robust, scalable, and secure connectivity between diverse financial platforms. Successfully presented and secured alignment on the technical roadmap with departmental VPs.
+* Delivered Procore's new Payment Management system, Procore Pay, leveraging Java/Spring Boot microservices and Camunda BPM to manage complex, highly-auditable payment workflows.
+
+
+AUTODESK - Principal Software Engineer        Jun 2019 – Oct 2022
+* Technical lead for multiple high-impact projects inside Autodesk Construction Cloud, architecting and  developing REST APIs and Process Workflows, with a focus on system performance optimization. This included a major initiative to reduce the Construction Projects activation process from minutes to seconds and a 25% reduction in query latency for high-traffic APIs.
+* Led multidisciplinary, global teams, guiding them through the entire development lifecycle, from strategic planning to release efforts. Mentored junior and senior engineers, conducted interviews for engineering and project management roles, and promoted collaboration across engineering and product teams, ensuring all efforts were aligned with strategic business objectives.
+AUTODESK - Senior Software Engineer        Aug 2014 – Jun 2019
+* Key contributor to the architecture and scaling of Autodesk's subscription model transition, designing and developing the core E-Commerce platform (Autodesk Store and In-Product Purchasing) that fueled a 16% revenue increase.
+
+
+IPROCESS - Technical Lead / System Architect        Nov 2011 – Jun 2014
+* Technical Lead and architectural liaison for iProcess' main client, designing and developing core financial credit and risk applications, including the largest product in the company's portfolio.
+* Drove the improvement of internal processes by introducing UML for design specifications, implementing logic tests in technical interviews, and enhancing the overall software development process. Oversaw recruitment and mentored engineers and new technical leads. Contributed to strategic planning as a member of the company’s administrative and innovation boards, and managed software estimation for new projects during the sales phase.
+
+
+HP - Technical Lead / Java EE Developer        Jun 2006 – Nov 2011
+* Technical Lead for the Resource Allocation Module inside HP’s Cloud Platform, successfully leading multidisciplinary teams (9–13 engineers) across different global locations.
+* Provided expert technical consultation and Java EE development for strategic applications in the Media sector, optimizing back-end application performance to handle high-volume transactions.
+
+
+EDUCATION
+* Bachelor of Science in Information Systems, Information Technology, PUCRS (2009).
+* Master of Business Administration (M.B.A.) in Capital Markets, Finance, Apimec (2014).

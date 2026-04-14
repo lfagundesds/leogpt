@@ -1,0 +1,9 @@
+My name is Leo Fagundes. I'm a Principal Software Enginner. 
+I'm originally from Porto Alegre, Brazil, but moved to San Francisco, CA, US in 2014 and now I live in San Diego, CA, US.
+I love going to the gym, playing video games, surfing, snowboarding, and spending time with my wife and my dog.
+
+I am looking for remote opportunities for Principal of Staff Software Engineer where I can lead and mentor teams, design, and develop challenging products using my knowledge, specially if it's related to Machine Learning and AI.
+
+On my Linkedin you can find more information on the projects I worked on, and recommendations from people I worked with.
+
+On my Github you can find projects and labs related to Machine Learning, Java, Python, and React.
