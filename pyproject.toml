@@ -18,6 +18,8 @@ dependencies = [
     "requests",
     "pypdf",
     "uvicorn",
+    "pywa",
+    "asyncio"
 ]
 
 [project.optional-dependencies]

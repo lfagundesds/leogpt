@@ -47,6 +47,15 @@ wheels = [
 ]
 
 [[package]]
+name = "asyncio"
+version = "4.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/71/ea/26c489a11f7ca862d5705db67683a7361ce11c23a7b98fc6c2deaeccede2/asyncio-4.0.0.tar.gz", hash = "sha256:570cd9e50db83bc1629152d4d0b7558d6451bb1bfd5dfc2e935d96fc2f40329b", size = 5371, upload-time = "2025-08-05T02:51:46.605Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/57/64/eff2564783bd650ca25e15938d1c5b459cda997574a510f7de69688cb0b4/asyncio-4.0.0-py3-none-any.whl", hash = "sha256:c1eddb0659231837046809e68103969b2bef8b0400d59cfa6363f6b5ed8cc88b", size = 5555, upload-time = "2025-08-05T02:51:45.767Z" },
+]
+
+[[package]]
 name = "audioop-lts"
 version = "0.2.2"
 source = { registry = "https://pypi.org/simple" }
@@ -667,12 +676,14 @@ name = "leogpt"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "asyncio" },
     { name = "dotenv" },
     { name = "fastapi" },
     { name = "gradio" },
     { name = "openai" },
     { name = "pydantic" },
     { name = "pypdf" },
+    { name = "pywa" },
     { name = "requests" },
     { name = "uvicorn" },
 ]
@@ -685,6 +696,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "asyncio" },
     { name = "dotenv" },
     { name = "fastapi" },
     { name = "gradio" },
@@ -692,6 +704,7 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.11.10,<=2.12.5" },
     { name = "pypdf" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
+    { name = "pywa" },
     { name = "requests" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8" },
     { name = "uvicorn" },
@@ -1528,6 +1541,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/56/db/b8721d71d945e6a8ac63c0fc900b2067181dbb50805958d4d4661cf7d277/pytz-2026.1.post1.tar.gz", hash = "sha256:3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1", size = 321088, upload-time = "2026-03-03T07:47:50.683Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/10/99/781fe0c827be2742bcc775efefccb3b048a3a9c6ce9aec0cbf4a101677e5/pytz-2026.1.post1-py2.py3-none-any.whl", hash = "sha256:f2fd16142fda348286a75e1a524be810bb05d444e5a081f37f7affc635035f7a", size = 510489, upload-time = "2026-03-03T07:47:49.167Z" },
+]
+
+[[package]]
+name = "pywa"
+version = "3.9.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/46/e6/92655218bedbcca644947b83f4cf021b5221f51e5ea1cab723bad01bfaed/pywa-3.9.0.tar.gz", hash = "sha256:c809c66e6d6a83d7c1632f9a11b7cdbd210b0f6d95d200a027ed4975a78741cc", size = 313154, upload-time = "2026-03-11T21:09:01.498Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/48/46/572058064b3648cdd55d9abcb8d2c81e99d8e8e12f03200127bb5cb1fa96/pywa-3.9.0-py3-none-any.whl", hash = "sha256:f9bfce8b6aa502a3f683888fefb2a6d2a0463798095de2b4c9fe8d31332bb1aa", size = 303730, upload-time = "2026-03-11T21:09:00.054Z" },
 ]
 
 [[package]]
