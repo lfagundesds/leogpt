@@ -10,12 +10,14 @@ readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Leo Fagundes" }]
 dependencies = [
+    "fastapi",
     "gradio",
     "pydantic>=2.11.10,<=2.12.5",
     "dotenv",
     "openai",
     "requests",
     "pypdf",
+    "uvicorn",
 ]
 
 [project.optional-dependencies]

@@ -668,11 +668,13 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "dotenv" },
+    { name = "fastapi" },
     { name = "gradio" },
     { name = "openai" },
     { name = "pydantic" },
     { name = "pypdf" },
     { name = "requests" },
+    { name = "uvicorn" },
 ]
 
 [package.optional-dependencies]
@@ -684,6 +686,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "dotenv" },
+    { name = "fastapi" },
     { name = "gradio" },
     { name = "openai" },
     { name = "pydantic", specifier = ">=2.11.10,<=2.12.5" },
@@ -691,6 +694,7 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
     { name = "requests" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8" },
+    { name = "uvicorn" },
 ]
 provides-extras = ["dev"]
 
