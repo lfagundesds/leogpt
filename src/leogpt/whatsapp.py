@@ -1,18 +1,17 @@
 from pywa import WhatsApp
+import os
 
 # Initialize client
 #TODO: Generate access token automatically
 wa = WhatsApp(
-    phone_id="1079617868566833",
-    token="EAAeY85obdToBRF3DiZAJPn8l7FlVahvfJBllHZAmPCsG4C0QCxAsjWlXInvZBBkvmz1htceErZAWGd42heUGeGFSKiQvXjkaHDEOJjei2fiXehnl0yZCr096fzG22HjAF89T2BMVn1peUnJ2t7ulOaOCyt2Jw0OrOGFEEbrRYIS7yM6bN5yl7MB6Qhoj8Kqv2ZAXozPoHD4Ux4dT4KD8nH1EZCUv29jEGImF8kSi8LdSSXlPL8iA61bm731Al97skVg3JxWZCrccZCnK14BtYjvziyWTMdHwxtpDC6d9omAZDZD"
+    phone_id = os.getenv("WHATSAPP_PHONE_ID"),
+    token = os.getenv("WHATSAPP_TOKEN")
 )
-print("Sending msg")
-# Send a message
 
 def send_message(text):
     try:
         wa.send_message(
-            to="14159006023",
+            to = os.getenv("WHATSAPP_PHONE_NUMBER"),
             text=text
         )
         print("msg sent")
