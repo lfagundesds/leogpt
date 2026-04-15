@@ -1,12 +1,31 @@
 import json
+import os
 from typing import Any
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import PlainTextResponse
 from leogpt.whatsapp import send_message
 from leogpt.chat import Me
 
 api = FastAPI(title="LeoGPTAPI")
 
 me = Me()
+
+@api.get("/webhook", response_class=PlainTextResponse)
+async def verify_webhook(request: Request) -> str:
+    verify_token = os.getenv("WHATSAPP_VERIFY_TOKEN")
+    if not verify_token:
+        raise HTTPException(status_code=500, detail="Missing WHATSAPP_VERIFY_TOKEN")
+
+    mode = request.query_params.get("hub.mode")
+    token = request.query_params.get("hub.verify_token")
+    challenge = request.query_params.get("hub.challenge")
+
+    if mode != "subscribe" or not challenge:
+        raise HTTPException(status_code=400, detail="Invalid verification params")
+    if token != verify_token:
+        raise HTTPException(status_code=403, detail="Invalid verify token")
+
+    return challenge
 
 @api.post("/webhook")
 async def webhook(request: Request) -> dict[str, Any]:
@@ -17,10 +36,21 @@ async def webhook(request: Request) -> dict[str, Any]:
         payload = json.loads(raw)
         print(f"payload: {payload}")
 
-        #TODO: Make it async
-        response = me.chat(payload["message"], [])
+        message = get_message(payload)
+        sender, message = get_message_data(payload)
 
-        send_message(response)
+        #TODO: Make it async
+        response = me.chat(message, [])
+
+        send_message(sender, response)
     except json.JSONDecodeError as exc:
         raise HTTPException(status_code=400, detail="Body must be valid JSON") from exc
     return {"ok": True, "received": payload}
+
+def get_message_data(payload: dict[str, Any]):
+    try:
+        message = payload["entry"][0]["changes"][0]["value"]["messages"][0]
+        return message["from"], message["text"]["body"]
+        #return payload["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]
+    except (KeyError, IndexError, TypeError) as exc:
+        raise HTTPException(status_code=400, detail="Invalid WhatsApp payload structure") from exc

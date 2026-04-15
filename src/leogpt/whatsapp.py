@@ -8,10 +8,10 @@ wa = WhatsApp(
     token = os.getenv("WHATSAPP_TOKEN")
 )
 
-def send_message(text):
+def send_message(sender, text):
     try:
         wa.send_message(
-            to = os.getenv("WHATSAPP_PHONE_NUMBER"),
+            to = sender,
             text=text
         )
         print("msg sent")
