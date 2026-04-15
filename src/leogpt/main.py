@@ -1,14 +1,11 @@
-import os
-
 import uvicorn
-
-from leogpt.asgi import app
-
+import gradio as gr
+from leogpt.chat import build_chat_interface
+from leogpt.api import api
 
 def main() -> None:
-    port = int(os.environ.get("PORT", os.environ.get("GRADIO_SERVER_PORT", "7860")))
-    uvicorn.run(app, host="0.0.0.0", port=port)
-
+    app = gr.mount_gradio_app(api, build_chat_interface(), path="/")
+    uvicorn.run(app, host="0.0.0.0", port=7860)
 
 if __name__ == "__main__":
     main()
