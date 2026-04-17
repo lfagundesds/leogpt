@@ -24,7 +24,7 @@ It also contains the possibility of using another LLM as an evaluator (disabled 
 The Whatsapp version can only be used in test mode unless I create a full Facebook Business Account, but here's a screenshot of how the Agent behaves.
 
 <p align="center">
-  <img src="images/whatsapp.jpeg" width="25%" alt="Example of Whatsapp">
+  <img src="images/whatsapp.jpeg" width="35%" alt="Example of Whatsapp">
 </p>
 
 ## Local Setup
