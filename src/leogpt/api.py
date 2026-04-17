@@ -6,7 +6,7 @@ from fastapi.responses import PlainTextResponse
 from leogpt.whatsapp import send_message
 from leogpt.chat import Me
 
-api = FastAPI(title="LeoGPTAPI")
+api = FastAPI(title="LeoGPT")
 
 me = Me()
 
@@ -30,20 +30,16 @@ async def verify_webhook(request: Request) -> str:
 @api.post("/webhook")
 async def webhook(request: Request) -> dict[str, Any]:
     raw = await request.body()
-    if not raw.strip():
-        return {"ok": True}
+
     try:
         payload = json.loads(raw)
-        print(f"payload: {payload}")
 
-        message = get_message(payload)
         sender, message = get_message_data(payload)
 
-        #TODO: Make it async
         response = me.chat(message, [])
 
         send_message(sender, response)
-    except json.JSONDecodeError as exc:
+    except Exception as exc:
         raise HTTPException(status_code=400, detail="Body must be valid JSON") from exc
     return {"ok": True, "received": payload}
 
@@ -51,6 +47,5 @@ def get_message_data(payload: dict[str, Any]):
     try:
         message = payload["entry"][0]["changes"][0]["value"]["messages"][0]
         return message["from"], message["text"]["body"]
-        #return payload["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"]
     except (KeyError, IndexError, TypeError) as exc:
         raise HTTPException(status_code=400, detail="Invalid WhatsApp payload structure") from exc
