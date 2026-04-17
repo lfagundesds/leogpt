@@ -12,8 +12,6 @@ anyio==4.13.0
     #   httpx
     #   openai
     #   starlette
-asyncio==4.0.0
-    # via leogpt (pyproject.toml)
 audioop-lts==0.2.2
     # via gradio
 brotli==1.2.0
