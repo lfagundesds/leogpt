@@ -57,6 +57,6 @@ class Me:
             send_pushover_notification(f"Internal Error: {e}")
             return f"Sorry, I've encountered an internal issue and will be working on solving it as soon as possible."
 
-def chat() -> None:
+def build_chat_interface() -> gr.ChatInterface:
     me = Me()
-    gr.ChatInterface(me.chat).launch()
+    return gr.ChatInterface(me.chat)

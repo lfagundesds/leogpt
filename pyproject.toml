@@ -9,13 +9,16 @@ description = "An AI Agent designed to answer professional questions about me th
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Leo Fagundes" }]
-dependencies = [
+dependencies = [    
     "gradio",
     "pydantic>=2.11.10,<=2.12.5",
     "dotenv",
     "openai",
     "requests",
     "pypdf",
+    "fastapi",
+    "uvicorn",
+    "pywa",
 ]
 
 [project.optional-dependencies]

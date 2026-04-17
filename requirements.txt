@@ -32,7 +32,9 @@ distro==1.9.0
 dotenv==0.9.9
     # via leogpt (pyproject.toml)
 fastapi==0.135.3
-    # via gradio
+    # via
+    #   leogpt (pyproject.toml)
+    #   gradio
 filelock==3.25.2
     # via huggingface-hub
 fsspec==2026.3.0
@@ -63,6 +65,7 @@ httpx==0.28.1
     #   gradio-client
     #   huggingface-hub
     #   openai
+    #   pywa
     #   safehttpx
 huggingface-hub==1.10.2
     # via
@@ -124,6 +127,8 @@ python-multipart==0.0.26
     # via gradio
 pytz==2026.1.post1
     # via gradio
+pywa==3.9.0
+    # via leogpt (pyproject.toml)
 pyyaml==6.0.3
     # via
     #   gradio
@@ -174,4 +179,6 @@ typing-inspection==0.4.2
 urllib3==2.6.3
     # via requests
 uvicorn==0.44.0
-    # via gradio
+    # via
+    #   leogpt (pyproject.toml)
+    #   gradio
