@@ -7,15 +7,25 @@ sdk_version: 6.12.0
 
 # LeoGPT
 
-An AI Agent designed to answer professional questions about me through chat.
+An AI Agent designed to answer professional questions about me through Web Chat or Whatsapp.
 
-It uses LLMs from ChatGPT, Gemini, etc, in order to generate the best answer, using my resume and a summary about me as data.
+It uses LLMs from ChatGPT, Gemini, etc, in order to generate the best answer, using my resume and my summary as data.
 
-[**Click Here**](https://huggingface.co/spaces/lfagundesds/leogpt) and try it out!
+It also contains the possibility of using another LLM as an evaluator (disabled by default), to verify if the generated answer is correct.
 
-![Example of Chat](images/chat.png)
+## Web Chat
 
-## Setup
+[**Click Here**](https://huggingface.co/spaces/lfagundesds/leogpt) to try out the Web Chat!
+
+![Example of Web Chat](images/chat.png)
+
+## Whatsapp
+
+The Whatsapp version can only be used in test mode unless I create a full Facebook Business Account, but here's a screenshot of how the Agent behaves.
+
+![Example of Whatsapp](images/whatsapp.jpeg)
+
+## Local Setup
 
 ```bash
 python3 -m venv .venv
@@ -31,9 +41,11 @@ Add the following keys and tokens to the `.env` file, choosing the LLM keys depe
 - `GOOGLE_API_KEY`
 - `PUSHOVER_USER`
 - `PUSHOVER_TOKEN`
-- `HF_TOKEN`
 - `DEEPSEEK_API_KEY`
 - `GROQ_API_KEY`
+- `WHATSAPP_PHONE_ID`
+- `WHATSAPP_TOKEN`
+- `WHATSAPP_VERIFY_TOKEN`
 
 ## Run
 
