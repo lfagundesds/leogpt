@@ -1,7 +1,7 @@
 import gradio as gr
 from dotenv import load_dotenv
 from pydantic import BaseModel
-from leogpt.llm_clients import create_llm_client, GPT_OSS_120_B, GPT_4_O_MINI
+from leogpt.llm_clients import create_llm_client, GEMINI_2_5_FLASH, GPT_4_O_MINI
 from leogpt.tools import tools, handle_tool_call
 from leogpt.prompts import response_provider_system_prompt, evaluator_system_prompt, evaluator_user_prompt, response_provider_rerun_prompt
 from leogpt.utils import as_text, send_pushover_notification
@@ -11,7 +11,7 @@ load_dotenv(override=True)
 #Important variables
 name = "Leo Fagundes"
 response_provider = create_llm_client(GPT_4_O_MINI)
-evaluator = create_llm_client(GPT_OSS_120_B)
+evaluator = create_llm_client(GEMINI_2_5_FLASH)
 
 class Evaluation(BaseModel):
     is_acceptable: bool

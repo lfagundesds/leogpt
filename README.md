@@ -27,6 +27,19 @@ The Whatsapp version can only be used in test mode unless I create a full Facebo
   <img src="images/whatsapp.jpeg" width="35%" alt="Example of Whatsapp">
 </p>
 
+## Design
+
+![Design](images/design.png)
+
+**Steps:**
+
+1. User Sends a message through Web Chat or Whatsapp.
+2. AI Agent sends a prompt to the Response Provider LLM with the message and data (resume + summary).
+3. AI Agent calls the Evaluator LLM to evaluate the response from the Provider.
+   1. If the evaluation returns Unacceptable, the Response Provider tries again.
+4. The AI Agent shows the response on the Web Chat or Whatassp.
+   1. If there was an error, a question that couldn't be answered, or if the user sends their contact info, the Notification System sends a message to my phone.
+
 ## Local Setup
 
 ```bash
