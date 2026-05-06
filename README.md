@@ -7,11 +7,12 @@ sdk_version: 6.12.0
 
 # LeoGPT
 
-An AI Agent designed to answer professional questions about me through Web Chat or Whatsapp.
+Multi-LLM Conversational AI Agent that answers professional questions about me via Web Chat and WhatsApp.
 
-It uses LLMs from ChatGPT, Gemini, etc, in order to generate the best answer, using my resume and my summary as data.
+It orchestrates multiple LLMs (OpenAI, Gemini, DeepSeek, Groq) as response providers, in order to generate the best answer, using my resume and my summary as data.
 
-It also contains the possibility of using another LLM as an evaluator (disabled by default), to verify if the generated answer is correct.
+It also implements an LLM-as-evaluator pattern to validate and retry low-quality responses, and integrates a real-time notification pipeline for unresolved queries and lead capture.
+
 
 ## Web Chat
 
