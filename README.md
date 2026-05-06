@@ -16,7 +16,7 @@ It also implements an LLM-as-evaluator pattern to validate and retry low-quality
 
 ## Web Chat
 
-[**Click Here**](https://huggingface.co/spaces/lfagundesds/leogpt) to try out the Web Chat!
+[**Click Here**](https://huggingface.co/spaces/lfagundesds/leogpt) to try out the Web Chat on Hugging Face Spaces!
 
 ![Example of Web Chat](images/chat.png)
 
