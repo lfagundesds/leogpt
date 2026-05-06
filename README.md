@@ -13,7 +13,6 @@ It orchestrates multiple LLMs (OpenAI, Gemini, DeepSeek, Groq) as response provi
 
 It also implements an LLM-as-evaluator pattern to validate and retry low-quality responses, and integrates a real-time notification pipeline for unresolved queries and lead capture.
 
-
 ## Web Chat
 
 [**Click Here**](https://huggingface.co/spaces/lfagundesds/leogpt) to try out the Web Chat on Hugging Face Spaces!
@@ -41,14 +40,6 @@ The Whatsapp version can only be used in test mode unless I create a full Facebo
 4. The AI Agent shows the response on the Web Chat or Whatassp.
    1. If there was an error, a question that couldn't be answered, or if the user sends their contact info, the Notification System sends a message to my phone.
 
-## Local Setup
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
-```
-
 ## Keys
 
 Add the following keys and tokens to the `.env` file, choosing the LLM keys depending on which LLM you will use:
@@ -62,6 +53,14 @@ Add the following keys and tokens to the `.env` file, choosing the LLM keys depe
 - `WHATSAPP_PHONE_ID`
 - `WHATSAPP_TOKEN`
 - `WHATSAPP_VERIFY_TOKEN`
+
+## Local Setup
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+```
 
 ## Run
 
@@ -81,8 +80,9 @@ The deployment can be made on [Hugging Face](https://huggingface.co)
 
 1. If you don't have a Hugging Face account, go to the next section before continuing;
 2. Run `hf auth login --token HF_TOKEN`, like `hf auth login --token hf_xxxxxx`, to login at the command line with your key. Afterwards, run `hf auth whoami` to check you're logged in
-3. From the main folder, enter: `uv run gradio deploy`
-4. Follow its instructions: name it `leogpt`, specify `app.py`, choose cpu-basic as the hardware, say Yes to needing to supply secrets, provide your openai api key, your pushover user and token, and say "no" to github actions.
+3. Run `uv pip compile pyproject.toml -o requirements.txt` to update the requirements.
+4. From the main folder, enter: `uv run gradio deploy`
+5. Follow its instructions: name it `leogpt`, specify `app.py`, choose cpu-basic as the hardware, say Yes to needing to supply secrets, provide your openai api key, your pushover user and token, and say "no" to github actions.
 
 ### Setting up an Account on Hugging Face
 

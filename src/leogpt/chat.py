@@ -59,4 +59,14 @@ class Me:
 
 def build_chat_interface() -> gr.ChatInterface:
     me = Me()
-    return gr.ChatInterface(me.chat)
+    description = """
+    ## A Multi-LLM Conversational AI Agent that answers professional questions about Leo Fagundes via Web Chat.
+    - Orchestrates multiple LLMs (OpenAI, Gemini, DeepSeek, Groq) as response providers to generate the best answer using resume and summary data.
+    - Implements an LLM-as-evaluator pattern to validate responses and retry when quality is low.
+    - Integrates a real-time notification pipeline for unresolved queries and lead capture.
+    - The source code is available on [Github](https://github.com/lfagundesds/leogpt).
+    
+    ### To start the conversation, just type your question below and the agent will answer it as if it were Leo Fagundes.
+    ##### You can also send your name and email to the agent, and it will record it and send it to me.
+    """
+    return gr.ChatInterface(me.chat, title="LeoGPT", description=description)
