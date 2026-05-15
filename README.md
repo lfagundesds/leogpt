@@ -34,6 +34,9 @@ Add the following keys and tokens to the `.env` file, choosing the LLM keys depe
 - `HF_TOKEN`
 - `DEEPSEEK_API_KEY`
 - `GROQ_API_KEY`
+- `WHATSAPP_PHONE_ID`
+- `WHATSAPP_TOKEN`
+- `WHATSAPP_VERIFY_TOKEN`
 
 ## Run
 
