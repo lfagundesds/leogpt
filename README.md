@@ -21,7 +21,7 @@ It also implements an LLM-as-evaluator pattern to validate and retry low-quality
 
 ## Whatsapp
 
-The Whatsapp version can only be used in test mode unless I create a full Facebook Business Account, but here's a screenshot of how the Agent behaves.
+The Whatsapp version can only be used in test mode unless I create a full Facebook Business Account, but here's a screenshot of how the Agent behaves. The whatsapp version is on [its own branch](https://github.com/lfagundesds/leogpt/tree/whatsapp).
 
 <p align="center">
   <img src="images/whatsapp.jpeg" width="35%" alt="Example of Whatsapp">
@@ -50,9 +50,6 @@ Add the following keys and tokens to the `.env` file, choosing the LLM keys depe
 - `PUSHOVER_TOKEN`
 - `DEEPSEEK_API_KEY`
 - `GROQ_API_KEY`
-- `WHATSAPP_PHONE_ID`
-- `WHATSAPP_TOKEN`
-- `WHATSAPP_VERIFY_TOKEN`
 
 ## Local Setup
 
