@@ -1,5 +1,5 @@
 import json
-from leogpt.utils import as_json, send_pushover_notification
+from leogpt.utils import as_json, send_email_notification
 
 specs_dir = 'specs'
 
@@ -10,11 +10,11 @@ tools = [{"type": "function", "function": record_user_details_json},
         {"type": "function", "function": record_unknown_question_json}]
 
 def record_user_details(email, name="Name not provided", notes="not provided"):
-    send_pushover_notification(f"Recording {name} with email {email} and notes {notes}")
+    send_email_notification(f"A user left their name: {name}, email: {email}, and notes: {notes}")
     return {"recorded": "ok"}
 
 def record_unknown_question(question):
-    send_pushover_notification(f"Recording {question}")
+    send_email_notification(f"A user made the following question that could not be answered: {question}")
     return {"recorded": "ok"}
 
 def handle_tool_call(tool_calls):

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from leogpt.llm_client import create_llm_client, CLAUDE_SONNET_4_6, GEMINI_2_5_FLASH, GPT_4_O_MINI
 from leogpt.tools import tools, handle_tool_call
 from leogpt.prompts import response_provider_system_prompt, evaluator_system_prompt, evaluator_user_prompt, response_provider_rerun_prompt
-from leogpt.utils import as_text, send_pushover_notification
+from leogpt.utils import as_text, send_email_notification
 
 load_dotenv(override=True)
 
@@ -55,7 +55,8 @@ class Me:
                     done = True
             return response.message.content
         except Exception as e:
-            send_pushover_notification(f"Internal Error: {e}")
+            print(f"Internal Error: {e}")
+            send_email_notification(f"Internal Error: {e}")
             return f"Sorry, I've encountered an internal issue and will be working on solving it as soon as possible."
 
 def chat() -> None:

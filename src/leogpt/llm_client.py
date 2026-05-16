@@ -14,7 +14,7 @@ class LLMClient():
         self.model = model        
 
     def send_message(self, messages: list[dict], tools: list[dict] = [], response_format= None):
-        return litellm.completion(model=self.model, messages=messages, response_format=response_format).choices[0]
+        return litellm.completion(model=self.model, messages=messages, tools=tools, response_format=response_format).choices[0]
 
 def create_llm_client(model: str) -> LLMClient:
     return LLMClient(model=model)

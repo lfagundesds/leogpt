@@ -38,7 +38,7 @@ The Whatsapp version can only be used in test mode unless I create a full Facebo
 3. AI Agent calls the Evaluator LLM to evaluate the response from the Provider.
    1. If the evaluation returns Unacceptable, the Response Provider tries again.
 4. The AI Agent shows the response on the Web Chat or Whatassp.
-   1. If there was an error, a question that couldn't be answered, or if the user sends their contact info, the Notification System sends a message to my phone.
+   1. If there was an error, a question that couldn't be answered, or if the user sends their contact info, the Notification System sends me an email.
 
 ## Keys
 
@@ -47,8 +47,9 @@ Add the following keys and tokens to the `.env` file, choosing the LLM keys depe
 - `ANTHROPIC_API_KEY`
 - `GEMINI_API_KEY`
 - `OPENAI_API_KEY`
-- `PUSHOVER_USER`
-- `PUSHOVER_TOKEN`
+- `EMAIL_ADDRESS`
+- `MAILGUN_API_KEY`
+- `MAILGUN_SANDBOX`
 
 ## Local Setup
 
@@ -77,7 +78,7 @@ The deployment can be made on [Hugging Face](https://huggingface.co)
 1. If you don't have a Hugging Face account, go to the next section before continuing;
 2. Run `hf auth login --token HF_TOKEN`, like `hf auth login --token hf_xxxxxx`, to login at the command line with your key. Afterwards, run `hf auth whoami` to check you're logged in
 3. Run `uv pip compile pyproject.toml -o requirements.txt` to update the requirements.
-4. From the main folder, enter: `uv run gradio deploy`
+4. From the main folder, enter: `gradio deploy`
 5. Follow its instructions: name it `leogpt`, specify `app.py`, choose cpu-basic as the hardware, say Yes to needing to supply secrets, provide your openai api key, your pushover user and token, and say "no" to github actions.
 
 ### Setting up an Account on Hugging Face
