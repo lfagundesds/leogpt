@@ -1,7 +1,7 @@
 import gradio as gr
 from dotenv import load_dotenv
 from pydantic import BaseModel
-from leogpt.llm_clients import create_llm_client, GEMINI_2_5_FLASH, GPT_4_O_MINI
+from leogpt.llm_client import create_llm_client, CLAUDE_SONNET_4_6, GEMINI_2_5_FLASH, GPT_4_O_MINI
 from leogpt.tools import tools, handle_tool_call
 from leogpt.prompts import response_provider_system_prompt, evaluator_system_prompt, evaluator_user_prompt, response_provider_rerun_prompt
 from leogpt.utils import as_text, send_pushover_notification
@@ -11,7 +11,8 @@ load_dotenv(override=True)
 #Important variables
 name = "Leo Fagundes"
 response_provider = create_llm_client(GPT_4_O_MINI)
-evaluator = create_llm_client(GEMINI_2_5_FLASH)
+#evaluator = create_llm_client(GEMINI_2_5_FLASH)
+evaluator = create_llm_client(CLAUDE_SONNET_4_6)
 
 class Evaluation(BaseModel):
     is_acceptable: bool
@@ -27,7 +28,7 @@ class Me:
     def evaluate(self, reply, message, history) -> Evaluation:
         messages = [{"role": "system", "content": evaluator_system_prompt(self.name, self.resume, self.summary)}] + [{"role": "user", "content": evaluator_user_prompt(reply, message, history)}]
         response = evaluator.send_message(messages=messages, response_format=Evaluation)
-        return response.message.parsed
+        return Evaluation.model_validate_json(response.message.content)
     
     def chat(self, message, history):
         done = False
@@ -43,7 +44,7 @@ class Me:
                     results = handle_tool_call(tool_calls)
                     messages.append(message)
                     messages.extend(results)            
-                elif self.should_evaluate:      
+                elif self.should_evaluate:
                     reply = response.message.content          
                     evaluation = self.evaluate(reply, message, history)
                     if evaluation.is_acceptable:
@@ -58,14 +59,14 @@ class Me:
             return f"Sorry, I've encountered an internal issue and will be working on solving it as soon as possible."
 
 def chat() -> None:
-    me = Me()
+    me = Me(should_evaluate=False)
 
     description = """
     ## A Multi-LLM Conversational AI Agent that answers professional questions about Leo Fagundes via Web Chat.
-    - Orchestrates multiple LLMs (OpenAI, Gemini, DeepSeek, Groq) as response providers to generate the best answer using resume and summary data.
+    - Orchestrates multiple LLMs (Anthropic, OpenAI, Gemini) as response providers to generate the best answer using resume and summary data.
     - Implements an LLM-as-evaluator pattern to validate responses and retry when quality is low.
     - Integrates a real-time notification pipeline for unresolved queries and lead capture.
-    - The source code is available on [Github](https://github.com/lfagundesds/leogpt).
+    - The source code is available on <a href="https://github.com/lfagundesds/leogpt" target="_blank" rel="noopener noreferrer">GitHub</a>.
     
     ### To start the conversation, just type your question below and the agent will answer it as if it were Leo Fagundes.
     ##### You can also send your name and email to the agent, and it will record it and send it to me.

@@ -13,9 +13,8 @@ dependencies = [
     "gradio",
     "pydantic>=2.11.10,<=2.12.5",
     "dotenv",
-    "openai",
     "requests",
-    "pypdf",
+    "litellm",
 ]
 
 [project.optional-dependencies]

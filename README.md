@@ -2,14 +2,14 @@
 title: leogpt
 app_file: app.py
 sdk: gradio
-sdk_version: 6.12.0
+sdk_version: 6.14.0
 ---
 
 # LeoGPT
 
 Multi-LLM Conversational AI Agent that answers professional questions about me via Web Chat and WhatsApp.
 
-It orchestrates multiple LLMs (OpenAI, Gemini, DeepSeek, Groq) as response providers, in order to generate the best answer, using my resume and my summary as data.
+It orchestrates multiple LLMs (Anthropic, OpenAI, Gemini) as response providers, in order to generate the best answer, using my resume and my summary as data.
 
 It also implements an LLM-as-evaluator pattern to validate and retry low-quality responses, and integrates a real-time notification pipeline for unresolved queries and lead capture.
 
@@ -44,12 +44,11 @@ The Whatsapp version can only be used in test mode unless I create a full Facebo
 
 Add the following keys and tokens to the `.env` file, choosing the LLM keys depending on which LLM you will use:
 
+- `ANTHROPIC_API_KEY`
+- `GEMINI_API_KEY`
 - `OPENAI_API_KEY`
-- `GOOGLE_API_KEY`
 - `PUSHOVER_USER`
 - `PUSHOVER_TOKEN`
-- `DEEPSEEK_API_KEY`
-- `GROQ_API_KEY`
 
 ## Local Setup
 
